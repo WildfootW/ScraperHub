@@ -31,6 +31,6 @@ while 1:
         image_url = "http://static.hentai-cosplay.com" + img_url_1 + str(i) + img_url_2
         print(image_url)
         s = requests.get(image_url, stream = True)
-        with open( directory_name + 'img' + str(i).zfill(4) + '.' + img_url_2, 'wb' ) as out_file:
+        with open( directory_name + 'img' + str(i).zfill(4) + img_url_2, 'wb' ) as out_file:
             out_file.write(s.raw.data)
 
