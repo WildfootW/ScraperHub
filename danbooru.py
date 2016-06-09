@@ -15,6 +15,6 @@ for j in range(1 , 90):
 		ext = v["data-file-ext"]
 		print (web_url + url)
 		r = requests.get(web_url + url, stream=True)
-		with open('horo/img' + str(j).zfill(2) + str(i).zfill(2) + '.' + ext, 'wb') as out_file:
+		with open('horo/danbooru/img' + str(j).zfill(2) + str(i).zfill(2) + '.' + ext, 'wb') as out_file:
 			out_file.write(r.raw.data)
 
