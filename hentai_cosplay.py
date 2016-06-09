@@ -15,14 +15,19 @@ while 1:
     if not os.path.exists(directory_name):
         os.makedirs(directory_name)
     directory_name = directory_name + "/"
+    print("directory name : " + directory_name)
 
     total_page = int(re.findall("\d*", re.findall("\/\d*\"", r.text.split('\n')[6])[0])[1])
+    print("total page : " + str(total_page))
 
     img_url = re.findall("\/upload\/\d*\/\d*\/\d*\/\d*....", str(soup.html.body.find(id="display_image_detail")))[0]
     img_url_1 = img_url[0:len(img_url) - 5]
     img_url_2 = img_url[len(img_url) - 4:len(img_url)]
+    print("img_url_1 : " + img_url_1)
+    print("img_url_2 : " + img_url_2)
 
-    for i in range(104, total_page + 1):
+
+    for i in range(1, total_page + 1):
         image_url = "http://static.hentai-cosplay.com" + img_url_1 + str(i) + img_url_2
         print(image_url)
         s = requests.get(image_url, stream = True)
