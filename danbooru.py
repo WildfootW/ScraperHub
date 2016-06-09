@@ -1,6 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+import os
+
+if not os.path.exists('horo/danbooru/'):
+    os.makedirs('horo/danbooru/')
 
 for j in range(1 , 90):
 	image_url = "https://danbooru.donmai.us/posts?page=" + str(j) + "&tags=spice_and_wolf"
