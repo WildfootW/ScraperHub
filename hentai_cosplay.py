@@ -1,3 +1,4 @@
+#副檔名判斷問題
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -28,6 +29,12 @@ while 1:
 
 
     for i in range(1, total_page + 1):
+#       img_url = re.findall("\/upload\/\d*\/\d*\/\d*\/\d*....", str(soup.html.body.find(id="display_image_detail")))[0]
+#       img_url_1 = img_url[0:len(img_url) - 5]
+#       img_url_2 = img_url[len(img_url) - 4:len(img_url)]
+#       print("img_url_1 : " + img_url_1)
+#       print("img_url_2 : " + img_url_2)
+
         image_url = "http://static.hentai-cosplay.com" + img_url_1 + str(i) + img_url_2
         print(image_url)
         s = requests.get(image_url, stream = True)
